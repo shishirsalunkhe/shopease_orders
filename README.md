@@ -55,15 +55,15 @@ USE ShopEase;
 
 # Python Visualizations (Task 3)
 
-# Install required libraries
+## Install required libraries
 ```bash
 pip install pandas matplotlib
 ```
-# Open Jupyter Notebook
+## Open Jupyter Notebook
 ```
 jupyter notebook
 ```
-# Run TASK-3.ipynb
+## Run TASK-3.ipynb
 
 ## Author
 ### Shishir Salunkhe 
