@@ -52,6 +52,7 @@ USE ShopEase;
 -- 2. Import CSV into table 'shopease_orders_2023_2024'
 
 -- 3. Run queries from TASK-1.sql and TASK-2.sql
+
 -- Python Visualizations (Task 3)
 
 # Install required libraries
