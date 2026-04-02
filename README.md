@@ -53,7 +53,7 @@ USE ShopEase;
 
 -- 3. Run queries from TASK-1.sql and TASK-2.sql
 
--- Python Visualizations (Task 3)
+## Python Visualizations (Task 3)
 
 # Install required libraries
 ```bash
