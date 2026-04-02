@@ -16,12 +16,12 @@ This project analyzes e-commerce order data for ShopEase, covering January 2023 
 - **Payment Methods:** 6 methods (Credit Card, UPI, Debit Card, Net Banking, COD, Wallet)
 
 ## Project Files
-── shopease_orders_2023_2024.csv # Raw dataset
-├── TASK-1.sql # SQL queries for Task 1
-├── TASK-2.sql # SQL queries for Task 2
-├── TASK-3.ipynb # Jupyter Notebook for Task 3
-├── TASK-4.ipynb # Jupyter Notebook for Task 4
-├── README.md # Project documentation
+- `shopease_orders_2023_2024.csv` - Raw dataset
+- `TASK-1.sql` - SQL queries for Task 1 (Data Cleaning & Exploration)
+- `TASK-2.sql` - SQL queries for Task 2 (Analysis Queries)
+- `TASK-3.ipynb` - Jupyter Notebook for Task 3 (Visualizations)
+- `TASK-4.ipynb` - Jupyter Notebook for Task 4 (Written Summary)
+- `README.md` - Project documentation
 
 ## Key Findings
 - **Top revenue category:** Beauty
