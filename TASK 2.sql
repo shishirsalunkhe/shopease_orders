@@ -44,8 +44,6 @@ SELECT
     COUNT(*) AS return_count
 FROM shopease_orders_2023_2024
 WHERE order_status = 'Returned'
-  AND return_reason IS NOT NULL
-  AND return_reason != ''
 GROUP BY return_reason
 ORDER BY return_count DESC
 LIMIT 1;
@@ -53,7 +51,7 @@ LIMIT 1;
 -- Part 2: Category with highest return rate
 SELECT 
     category,
-    ROUND(SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS return_rate_percent
+    ROUND(SUM(CASE WHEN order_status = 'Returned' THEN 1 ELSE 0 END) * 100.0 / COUNT(*)) AS return_rate_percent
 FROM shopease_orders_2023_2024
 GROUP BY category
 ORDER BY return_rate_percent DESC
