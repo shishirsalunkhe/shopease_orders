@@ -1,9 +1,10 @@
+create database ShopEase;
 USE ShopEase;
 -- TASK - 1 
 -- Data Cleaning & Exploration
 select * FROM shopease_orders_2023_2024;
--- Q1: Total orders and breakdown by status
--- How many orders are there in total? How many are Delivered / Returned / Cancelled?
+
+--  How many orders are there in total? How many are Delivered / Returned / Cancelled?
 SELECT 
     COUNT(*) AS total_orders,
     SUM(CASE WHEN order_status = 'Delivered' THEN 1 ELSE 0 END) AS delivered_orders,
@@ -11,7 +12,7 @@ SELECT
     SUM(CASE WHEN order_status = 'Cancelled' THEN 1 ELSE 0 END) AS cancelled_orders
 FROM shopease_orders_2023_2024;
 
--- Q2: Check missing values
+
 -- Are there any missing values? Which columns have them, and why do you think they're blank?
 SELECT
     SUM(CASE WHEN order_date IN (NULL, '', 'nan', 'NaN', 'NAN', 'null', 'NULL') THEN 1 ELSE 0 END) AS missing_order_date,
@@ -36,7 +37,7 @@ FROM shopease_orders_2023_2024;
 3. discount_pct (352 missing) – likely 0% discount that was left blank instead of entered as zero*/
 
 
--- Q3: Date range and orders per year
+--  What is the date range of the dataset? How many orders fall in 2023 vs 2024?
 SELECT 
     MIN(order_date) AS earliest_order_date,
     MAX(order_date) AS latest_order_date,
@@ -44,7 +45,7 @@ SELECT
     SUM(CASE WHEN year = 2024 THEN 1 ELSE 0 END) AS orders_2024
 FROM shopease_orders_2023_2024;
 
--- Q4: Average delivery days by region (Delivered only)
+--  What is the average delivery_days for Delivered orders, broken down by region?
 SELECT 
     region,
     AVG(delivery_days) AS avg_delivery_days,
@@ -55,7 +56,7 @@ WHERE order_status = 'Delivered'
 GROUP BY region
 ORDER BY avg_delivery_days;
 
--- Q5: Age group with most orders
+--  Which age group (e.g. 18–25, 26–35, 36–45, 46+) placed the most orders?
 SELECT 
     CASE 
         WHEN customer_age BETWEEN 18 AND 25 THEN '18-25'
